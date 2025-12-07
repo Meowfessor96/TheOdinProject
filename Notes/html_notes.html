@@ -1,0 +1,59 @@
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                            Standard Formality part : 
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+First write down <!DOCTYPE html> 
+We'll then create a head tag and write stuff in it
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>This will show up in the tab area on top</title>
+    </head>
+<!-- 
+    <body>
+        ...
+    </body> 
+-->
+</html>
+To avoid these formalities u can just type '!'' in vscode it'll autocorrect and give the template(boilerplate)
+
+<a href="never_gonna_give_u_up.html"></a>
+    ^                                  ^  
+ attribute                          element(h1,a,img..)
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+ 
+Headings - <h1></h1> - <h6></h6> <!-- it automatically asserts a heirarchy, h1 being the most important one -->
+Bold - <strong></strong>
+Italicise - <em></em>
+Lists - unordered list <ul></ul>, ordered lists <ol></ol>. list each item with <li></li>
+<!-- unordered just creates bullet points, whwereas ordered enumerates items -->
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                            Anchor tag(links) - <a></a>
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+Attributes :
+website link - <a href="..."></a>
+<!-- types of Links :
+ Absolute : https://www.theodinproject.com/about
+ Relative : path is related to our website, href = "redirect.html"
+    u can attach another html file in the same Dir as index.html
+    ./ signifies the path relative to the current path
+    / signifes the path related to the home folder(not related to the current path)
+    ../ signifes parent folder
+-->
+open website in newpage - <a href="." target = "_blank"></a>
+rel = "nopener" <!-- doesn't let the new website interact with the original one -->
+rel = "noreferrer" <!-- doesn't let the website know where we came from, autoincludes noopener -->
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                                        IMAGES 
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+<!-- It is a void element(no closing tag required) -->
+<img src="put_the_image_link_here.png">
+Attributes :
+alt="some text" - Image description, shows up if image is not loaded too 
+height="310"
+width="110"
