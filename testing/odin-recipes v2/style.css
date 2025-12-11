@@ -1,0 +1,38 @@
+*{
+        background-color: antiquewhite;
+}
+
+.page{
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        border: 2px solid black;
+        text-align: center;
+        margin: auto;
+}
+
+.title{
+        font-family: "Brush Script MT",cursive;
+        margin:10vh 0;
+}
+.content{
+        text-align: center;
+}
+li {
+    font-size: 24px;
+    list-style: none;
+    display: inline-flex;   
+    justify-content: center;
+    align-items: center;    
+    border: 2px solid black;
+    width: 30vw;
+    height: 60vh;
+    margin:20px;
+}
+
+li a{
+        text-decoration: none;
+        color: black;
+}
+
+

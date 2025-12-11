@@ -1,9 +1,174 @@
 # --------------------------------------------------------------------------------------------------------------------------- #
-body{ 
-  ^      font-weight : 700;
-  |     }    ^          ^
-  |       property     value 
-selector
-______________________________________________________________________________________________________________________________
+
+External method - Add it to html in head : <link rel = "stylesheet" href = "style.css">
+Internal method - U can use CSS code within html->head using <style></style>
+Inline Method - U can even use style as an attribute and then type CSS code without curly braces
+        ex : <div style="color: white; background-color: black;">...</div>
+
+                                                body{ 
+                                                  ^      font-weight : 700;
+                                                  |     }    ^          ^
+                                                  |       property     value 
+                                                selector
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                                        Selectors
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+* - universal selector
+type selector : select some element 
+        div{}
+        p{}
+        img{}
+class selector : u can place a class="..." attribute on any element (the name cannot start with numbers)
+        .one{}
+        .something{}
+id selector : u can place a id attribute to any element too
+              an element can only have 1 id, no whitespaces, IDs can't start with a number
+        #name{}
+        #rollno{}
+u can even group two different selectors with a ',' : .school, .college{}
+u can chain different classes, ids by simply appending : .subsection.header{}
+
+Descendant combinator : space between selectors, applies only to this order of ancestor relationship
+        ex :
+1                <div class="ancestor">
+2                       <div class="contents">
+3                               <div class="contents"></div>    
+4                       </div>
+5               </div>
+
+6               <div class="contents"></div>
+
+                .ancestor .contents{
+                        this'd only work on lines 2,3
+                }
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                                     Properties
+# --------------------------------------------------------------------------------------------------------------------------- #
+color : red, transparent
+        hex - color : #1100ff;                  (#rrggbb)
+              color : #1100ff51;                (add two extra digits about how much transparent it should be 00-ff)
+        rgb - color : rgb(100,0,255);           (0-255)
+              color : rgba(100,0,255,0.6);      (last parameter is alpha(opacity) : 0-1)
+        hsl - color : hsl(15,82%,69%);          (hue,saturation,lightness)
+              color : hsla(15,82%,69%,0.8);     (hue,saturation,lightness,alpha)
+        currentcolor - uses the current color of the element
+
+same for background-color too 
+
+font-family : 
+        font family name - font-family = "New times roman";
+        generic name     - font-family = serif;
+                u can also add multiple fonts with comma, the first one takes top preference. if the website doesn't load it 
+                the next font tries to render
+font-size : 22px
+
+font-weight : bold
+              0-1000 (bold is aprox 700)
+
+text-align : center (only centers the inner Display elements)
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                                        Values
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+font-size :
+        Absolute : cm,mm,px
+        Realtive : 
+                em - font size scaling of the parent element (itself if no parent)
+                rem - font size of root element
+                vh - viewport height            (0-100)
+                vw - viewport width             (0-100)
+                vmin - min of vw,vh
+                vmax - max of vw,vh
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                                        Cascades
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+There is a preference order if multiple selectors are being applied 
+
+0. Inline style
+1. id
+2. classes      
+3. elements
+
+[In tie breakers the more specific selector/ the last written selector applies]
+
+Ex  1 : class vs bigger chain class
+        <div class="main">
+          <div class="list subsection">Red text</div>
+        </div>
+
+        .subsection {
+          color: blue;
+        }
+
+        .main .list {
+          color: red;
+        }
+
+Here .main .list takes preference
+
+Ex 2  : id vs chained class 
+
+        <div class="main">
+          <div class="list" id="subsection">Blue text</div>
+        </div>
+
+        #subsection {
+          color: blue;
+        }
+
+        .main .list {
+          color: red;
+        }
+Here id will be take preference
+
+Ex 3  : id vs id+class specific
+
+        <div class="main">
+          <div class="list" id="subsection">Red text on yellow background</div>
+        </div>
+
+        #subsection {
+          background-color: yellow;
+          color: blue;
+        }
+
+        .main #subsection {
+         color: red;
+        }
+
+Here the more complex one takes preference : .main #subsection
+
+# --------------------------------------------------------------------------------------------------------------------------- #
+                                                    Box Model
+# --------------------------------------------------------------------------------------------------------------------------- #
+
+padding - distance between the border and the textbox
+margin - distance between margin of the current and the adjacent box 
+box-sizing : border-box ; 
+        if u declare width and height, this'll make sure that the final width, height after border,padding is whatever u entered
+box-sizing : content-box ;  
+        by default if width is set to 100px, it'll get covered by border and padding
+margin : can take upto 4 parameters
+        margin: all_sides_margin;
+        margin: vertical horizontal;
+        margin: top left_right bottom;
+        margin: top right bottom left;
+
+Display : 
+        Outer Display : The outer box tweaking
+                block - (h1,p,div,lists) creates newline, takes full width if width is not mentioned
+                inline - (a,span) no newline, width, height, vertical margins have no effect on it, behaves like text 
+                inline-block - Inline but supports width & height, vertical margins.
+        Inner Display : The content inside the box 
+                flow - default (block+inline flow)
+                flex - (block,flex) control content with        
+                        flex-direction (row | column)
+                        justify-content (main axis) align-items(cross axis) 
+                inline-flex - (inline,flex) The box acts as text for parent     
 
 

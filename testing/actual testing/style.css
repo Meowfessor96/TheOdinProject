@@ -1,0 +1,17 @@
+.box {
+        padding: 2px;
+        border: 1px solid black;
+        width: 50px;
+        height: auto;
+}
+
+li {
+        list-style: none;
+}
+
+
+
+.two{
+        display: inline-block;
+        margin-top: 20px;
+}

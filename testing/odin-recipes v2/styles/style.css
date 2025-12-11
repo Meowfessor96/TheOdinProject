@@ -1,0 +1,42 @@
+body{
+        background-color: antiquewhite;
+}
+.content.heading{
+        text-align: center;
+        font-size: 24px;
+        text-transform: uppercase;
+}
+h1.heading {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 48px;
+}
+.content{
+        font-family: 'Times New Roman', serif;
+        font-size: large;
+}
+.block{
+        width: 60vw;
+        border: 2px solid red;
+        background-color:rgb(211, 226, 238);
+        padding: 0 4em;
+        margin: 2em auto;
+}
+
+img{
+        display: block;
+        margin: auto;
+        width: 60%;
+}
+.footer{
+        text-align: center;
+}
+a#back{
+        display: inline-flex;
+        margin: 1.5em 0;
+        background-color: rgb(192, 255, 186);
+        text-decoration: none;
+        color:rgb(64, 51, 51);
+        
+}
